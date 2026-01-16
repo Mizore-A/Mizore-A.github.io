@@ -1,0 +1,36 @@
+site_name: 我的个人主页
+site_url: https://yourname.github.io/  # 改成你的GitHub Page地址
+
+theme:
+  name: material
+  language: zh  # 界面语言设为中文
+  features:
+    - navigation.indexes # 允许点击目录名直接跳转
+    - navigation.top     # 返回顶部按钮
+  palette: 
+    # 切换亮色/暗色模式的按钮配置
+    - scheme: default
+      primary: teal
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: lime
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+# Markdown 扩展功能 (这里是核心)
+markdown_extensions:
+  - admonition        # 支持提示块 (info, warning等)
+  - pymdownx.details  # 支持折叠块
+  - pymdownx.superfences # 支持代码块高亮
+  - pymdownx.arithmatex: # LaTeX 数学公式支持
+      generic: true
+
+# 加载 MathJax 脚本 (渲染公式用)
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
