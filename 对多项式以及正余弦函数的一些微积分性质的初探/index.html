@@ -598,173 +598,173 @@
 <h2 id="_1">对多项式以及正余弦函数的一些微积分性质的初探</h2>
 <p>——一类函数在微积分运算上的封闭性</p>
 <p>大一上高数的小论文，我也不知道我写的东西有什么意义。</p>
-<p>在探究三角函数的微分与积分时，我发现了一件有趣的事情，即对于一个整数次的正余弦函数，它的微积分也一定可以用次数小于等于其的正余弦函数表示（积分里的常数项不考虑），或许还会跟上一些多项式，我们以<span class="arithmatex">\(2\)</span>次正余弦函数为例：
-$$
+<p>在探究三角函数的微分与积分时，我发现了一件有趣的事情，即对于一个整数次的正余弦函数，它的微积分也一定可以用次数小于等于其的正余弦函数表示（积分里的常数项不考虑），或许还会跟上一些多项式，我们以<span class="arithmatex">\(2\)</span>次正余弦函数为例：</p>
+<div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x}(\sin^2 x)=2\sin x \cos x
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x}(\sin x \cos x)=\cos^2x-\sin^2x
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x}(\cos^2 x)=-2\sin x\cos x
-$$
-很明显在求导之后 <span class="arithmatex">\(\sin x\)</span> 与 <span class="arithmatex">\(\cos x\)</span> 的次数之和总是<span class="arithmatex">\(2\)</span>。反之，我们对两侧同时积分，也可以发现积分的情况：
-$$
+\]</div>
+<p>很明显在求导之后 <span class="arithmatex">\(\sin x\)</span> 与 <span class="arithmatex">\(\cos x\)</span> 的次数之和总是<span class="arithmatex">\(2\)</span>。反之，我们对两侧同时积分，也可以发现积分的情况：</p>
+<div class="arithmatex">\[
 \int \sin^2 x \, \mathrm{d}x = \frac{x}{2} - \frac{1}{2}\sin x \cos x + C
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \int \sin x \cos x \, \mathrm{d}x = \frac{1}{2}\sin^2 x + C = -\frac{1}{2}\cos^2 x + C
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \int \cos^2 x \, \mathrm{d}x = \frac{x}{2} + \frac{1}{2}\sin x \cos x + C
-$$
-结果中正余弦的次数和也是二，接下来我证明这一点。</p>
+\]</div>
+<p>结果中正余弦的次数和也是二，接下来我证明这一点。</p>
 <p>为了方便，我记 <span class="arithmatex">\(\sin^ax\cos^bx=[a,b]\)</span> ，其中 <span class="arithmatex">\(a, b\in \mathbb{Z}^+\)</span></p>
-<p>通过求导的乘法法则不难得到：
-$$
+<p>通过求导的乘法法则不难得到：</p>
+<div class="arithmatex">\[
 \frac{\rm{d}}{\mathrm{d}x}[a,b]=a\ [a-1,b+1]-b\ [a+1,b-1]
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 a+b=a-1+b+1=a+1+b-1
-$$
-对于积分，我们可以利用分部积分法：
-$$
+\]</div>
+<p>对于积分，我们可以利用分部积分法：</p>
+<div class="arithmatex">\[
 \int [a,b] \, \mathrm{d}x = -\frac{[a-1,b+1]}{a+b} + \frac{a-1}{a+b} \int [a-2,b] \, \mathrm{d}x
-$$
-或者也写成这样的形式：
-$$
+\]</div>
+<p>或者也写成这样的形式：</p>
+<div class="arithmatex">\[
 \int [a,b]\, \mathrm{d}x = \frac{[a+1,b-1]}{a+b} + \frac{b-1}{a+b} \int [a,b-2] \, \mathrm{d}x
-$$
-于是可以开始递推，最终后面一半就一定是 <span class="arithmatex">\([1,0]\)</span>, <span class="arithmatex">\([1,1]\)</span>, <span class="arithmatex">\([0,1]\)</span> 三种形式之一，积分也就很好求了。</p>
-<p>举例：
-$$
+\]</div>
+<p>于是可以开始递推，最终后面一半就一定是 <span class="arithmatex">\([1,0]\)</span>, <span class="arithmatex">\([1,1]\)</span>, <span class="arithmatex">\([0,1]\)</span> 三种形式之一，积分也就很好求了。</p>
+<p>举例：</p>
+<div class="arithmatex">\[
 \int [4,6] \, \mathrm{d}x = -\frac{1}{10}[3,7] -\frac{3}{80}[1,7] + \frac{1}{160}[1,5] + \frac{1}{128}[1,3] + \frac{3}{256}[1,1]+ \frac{3}{256}x + C
-$$
-最高次是 <span class="arithmatex">\(10\)</span> ，符合我之前的想法。</p>
+\]</div>
+<p>最高次是 <span class="arithmatex">\(10\)</span> ，符合我之前的想法。</p>
 <p>又比如说：</p>
-<p>$$
+<div class="arithmatex">\[
 \int [3,5] \, \mathrm{d}x = \frac{1}{8}[0,8] - \frac{1}{6}[0,6] + C
-$$
-（其实有奇数次项的时候不需要递推，直接换元凑积分很快就能做出来）</p>
-<p>于是这个结论就得证了，用数学语言来表示就是：
-$$
+\]</div>
+<p>（其实有奇数次项的时候不需要递推，直接换元凑积分很快就能做出来）</p>
+<p>于是这个结论就得证了，用数学语言来表示就是：</p>
+<div class="arithmatex">\[
 \forall a,b \in \mathbb{Z}^+,\,\,p\in \mathbb{R} ,\,\,\exists \, i_n,j_n \leq a+b,\,\,i_n,j_n\in\mathbb{Z^+}\,\,\,q_n,r_n,k\in\mathbb{R}\,\,\,\rm{s.t.}
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x}p[a,b]=\sum q_n[i_n,j_n]
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \int p[a,b] \, \mathrm{d}x=\sum r_n[i_n,j_n] + kx+ C
-$$</p>
-<p>考虑到积分与微分的运算是可以自由地进行加减的，所以我们可以把左边也写成求和的形式，即有：
-$$
+\]</div>
+<p>考虑到积分与微分的运算是可以自由地进行加减的，所以我们可以把左边也写成求和的形式，即有：</p>
+<div class="arithmatex">\[
 \forall a,b \in \mathbb{Z}^+,\,\,p_n\in \mathbb{R} ,\,\,\exists \, i_n,j_n \leq a_{max}+b_{max},\,\,i_n,j_n\in\mathbb{Z^+}\,\,\,q_n,r_n,k\in\mathbb{R}\,\,\,\rm{s.t.}
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x}\left(\sum p_n[a_n,b_n]\right)=\sum \frac{\mathrm{d}}{\mathrm{d}x}\left(p_n[a_n,b_n]\right)=\sum q_n[i_n,j_n]
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \int \left(\sum p_n[a_n,b_n]\right) \,\mathrm{d}x=\sum\left(\int p_n[a_n,b_n] \, \mathrm{d}x\right)=\sum r_n[i_n,j_n] + kx+ C
-$$
-为了更进一步的方便，我规定：
-$$
-\mathbb{SC}(n) = \left{ \sum_{i+j \le n} c_{ij} \sin^i x \cos^j x \mid c_{ij} \in \mathbb{R} \right}
-$$
-要注意的是这里的 <span class="arithmatex">\(\mathbb{SC}\)</span> 并不是一个一一映射的函数，它代表了一种集合，表示一切次数小于 <span class="arithmatex">\(n\)</span> 的正整数次正余弦函数之和的集合，如果是单纯的不带括号的 <span class="arithmatex">\(\mathbb{SC}\)</span> ，则表示一切正余弦函数之和的集合，其中<span class="arithmatex">\(\rm{S,C}\)</span>是 <span class="arithmatex">\(\sin\)</span> 与 <span class="arithmatex">\(\cos\)</span> 的首字母。
-于是上面的结果可以改写成：
-$$
+\]</div>
+<p>为了更进一步的方便，我规定：</p>
+<div class="arithmatex">\[
+\mathbb{SC}(n) = \left\{ \sum_{i+j \le n} c_{ij} \sin^i x \cos^j x \mid c_{ij} \in \mathbb{R} \right\}
+\]</div>
+<p>要注意的是这里的 <span class="arithmatex">\(\mathbb{SC}\)</span> 并不是一个一一映射的函数，它代表了一种集合，表示一切次数小于 <span class="arithmatex">\(n\)</span> 的正整数次正余弦函数之和的集合，如果是单纯的不带括号的 <span class="arithmatex">\(\mathbb{SC}\)</span> ，则表示一切正余弦函数之和的集合，其中<span class="arithmatex">\(\rm{S,C}\)</span>是 <span class="arithmatex">\(\sin\)</span> 与 <span class="arithmatex">\(\cos\)</span> 的首字母。
+于是上面的结果可以改写成：</p>
+<div class="arithmatex">\[
 \forall f(x) \in \mathbb{SC}(n)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x}f(x) \in \mathbb{SC}(n)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \int f(x) + kx +C  \in \mathbb{SC}(n)
-$$
-我感觉这是很有意思的，如果忽略积分后的一次项以及常数项，这些正余弦函数的微积分运算总是可以用有限的项表示出来，而这些项的次数也总是小于等于原函数，好像是有封闭性一样。</p>
+\]</div>
+<p>我感觉这是很有意思的，如果忽略积分后的一次项以及常数项，这些正余弦函数的微积分运算总是可以用有限的项表示出来，而这些项的次数也总是小于等于原函数，好像是有封闭性一样。</p>
 <p>不过很可惜，忽略常数项还说得过去，但是那个一次项我是怎么也忽略不了，这是因为 <span class="arithmatex">\([0,0]\)</span> 作为一个常数项，其积分结果结果出现一个一次项。</p>
 <p>所以我想能不能有一个真正的封闭性集合呢？在某一天做练习题第65页第7题的时候我脑洞大开：是不是只需要给这些正余弦函数也乘上一个多项式就好了？多项式与正余弦函数乘积的微积分是否还是多项式与正余弦函数的乘积？</p>
-<p>说干就干，我开始计算。对于微分还是很好处理的：
-$$
+<p>说干就干，我开始计算。对于微分还是很好处理的：</p>
+<div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x}\left( x^n[a,b] \right)= n x^{n-1}[a,b]+a x^n[a-1,b+1]-bx^n[a+1,b-1]
-$$
-正余弦函数的次数仍旧不变，多项式的次数也不会增加。</p>
+\]</div>
+<p>正余弦函数的次数仍旧不变，多项式的次数也不会增加。</p>
 <p>对于积分，我们先来考虑一个事情，那就是任意的 <span class="arithmatex">\([a,b]\)</span> 其实都可以化成 <span class="arithmatex">\(\sin kx\)</span> 与 <span class="arithmatex">\(\cos kx\)</span> 的和，这点用积化和差与数学归纳法就可以做到：</p>
-<p>我们首先定义集合 <span class="arithmatex">\(\mathbb{S}\)</span>：
-$$
-\mathbb{S}=\left{\sum c_k \cos(kx) + \sum d_k \sin(kx)\mid k \in \mathbb{N},\,\ c_k,d_k \in \mathbb{R} \right}
-$$</p>
+<p>我们首先定义集合 <span class="arithmatex">\(\mathbb{S}\)</span>：</p>
+<div class="arithmatex">\[
+\mathbb{S}=\left\{\sum c_k \cos(kx) + \sum d_k \sin(kx)\mid k \in \mathbb{N},\,\ c_k,d_k \in \mathbb{R} \right\}
+\]</div>
 <p><span class="arithmatex">\(\mathbb{S}\)</span> 就是一切这些<span class="arithmatex">\(\sin kx\)</span> 与 <span class="arithmatex">\(\cos kx\)</span> 的线性组合。</p>
-<p>再看积化和差：
-$$
+<p>再看积化和差：</p>
+<div class="arithmatex">\[
 \cos(Ax) \cos(x) = \frac{1}{2}[\cos(A+1)x + \cos(A-1)x]
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \sin(Ax) \cos(x) = \frac{1}{2}[\sin(A+1)x + \sin(A-1)x]
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \cos(Ax) \sin(x) = \frac{1}{2}[\sin(A+1)x - \sin(A-1)x]
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \sin(Ax) \sin(x) = -\frac{1}{2}[\cos(A+1)x - \cos(A-1)x]
-$$
-1.首先，<span class="arithmatex">\([1,0]\)</span> 与 <span class="arithmatex">\([0,1]\)</span> 无疑 <span class="arithmatex">\(\in\mathbb{S}\)</span></p>
+\]</div>
+<p>1.首先，<span class="arithmatex">\([1,0]\)</span> 与 <span class="arithmatex">\([0,1]\)</span> 无疑 <span class="arithmatex">\(\in\mathbb{S}\)</span></p>
 <p>2.当 <span class="arithmatex">\(\sin kx\)</span> <span class="arithmatex">\(\in\rm{S}\)</span> 时，根据上面的公式， <span class="arithmatex">\(\sin kx[1,0]\)</span> 与 <span class="arithmatex">\(\sin kx[0,1]\)</span> 也就一定 <span class="arithmatex">\(\in\mathbb{S}\)</span></p>
 <p>3.于是 <span class="arithmatex">\([a,b]\)</span> 一定 <span class="arithmatex">\(\in\mathbb{S}\)</span></p>
-<p>反过来其实也可以证明：
-$$
+<p>反过来其实也可以证明：</p>
+<div class="arithmatex">\[
 c_k \cos(kx) + d_k \sin(kx) \in \mathbb{SC}
-$$
-因此实际上有：
-$$
+\]</div>
+<p>因此实际上有：</p>
+<div class="arithmatex">\[
 \mathbb{S} \equiv \mathbb{SC}
-$$
-我们现在就可以把 <span class="arithmatex">\(x^n[a,b]\)</span> 写成 <span class="arithmatex">\(x^n\sum (c_k \cos(kx) + d_k \sin(kx))\)</span> 的形式了。</p>
-<p>于是积分就变得容易，只需要分别用分部积分递推：
-$$
+\]</div>
+<p>我们现在就可以把 <span class="arithmatex">\(x^n[a,b]\)</span> 写成 <span class="arithmatex">\(x^n\sum (c_k \cos(kx) + d_k \sin(kx))\)</span> 的形式了。</p>
+<p>于是积分就变得容易，只需要分别用分部积分递推：</p>
+<div class="arithmatex">\[
 \int x^n\cos kx \,\mathrm{d}x=\int \frac{x^n}{k} \, d\sin kx=\frac{x^n}{k}\cdot \sin kx-\int \sin kx \, \mathrm{d}\frac{x^n}{k}
-$$
-（<span class="arithmatex">\(x^n\sin kx\)</span> 同理）</p>
+\]</div>
+<p>（<span class="arithmatex">\(x^n\sin kx\)</span> 同理）</p>
 <p>我们就总是可以把它表示为一串（多项式乘以正余弦函数）的形式</p>
 <p>于是这个集合就真的在微积分上具有封闭性了。</p>
-<p>我们定义：
-$$
+<p>我们定义：</p>
+<div class="arithmatex">\[
 D(x)=\sum_{i=0}^n k_i x^i
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 SC(n)=\sum_{i+j \leq 0} k_{ij}[i,j]
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 SCD(n,x)=\sum SC(n)D(x)
-$$
-其中 <span class="arithmatex">\(D(x)\)</span> 表示多项式之和 <span class="arithmatex">\(SC(a,b)\)</span> 表示正余弦函数之和， <span class="arithmatex">\(SCD(n,x)\)</span> 就表示一切为正余弦函数×多项式之和形式的函数。</p>
-<p>定义：
-$$
-\mathbb{SCD}(n,x) = \left{SCD(n,x)\mid n,x\in \mathbb{N}\right}
-$$
-换言之，<span class="arithmatex">\(\mathbb{SCD}\)</span> 是所有形如 <span class="arithmatex">\(D(x)\sin^ax\cos^bx\)</span> 的函数的有限线性组合，在不含括号的情况下 <span class="arithmatex">\(\mathbb{SCD}\)</span> 没有次数的限制。</p>
-<p>于是有定理：
-$$
+\]</div>
+<p>其中 <span class="arithmatex">\(D(x)\)</span> 表示多项式之和 <span class="arithmatex">\(SC(a,b)\)</span> 表示正余弦函数之和， <span class="arithmatex">\(SCD(n,x)\)</span> 就表示一切为正余弦函数×多项式之和形式的函数。</p>
+<p>定义：</p>
+<div class="arithmatex">\[
+\mathbb{SCD}(n,x) = \left\{SCD(n,x)\mid n,x\in \mathbb{N}\right\}
+\]</div>
+<p>换言之，<span class="arithmatex">\(\mathbb{SCD}\)</span> 是所有形如 <span class="arithmatex">\(D(x)\sin^ax\cos^bx\)</span> 的函数的有限线性组合，在不含括号的情况下 <span class="arithmatex">\(\mathbb{SCD}\)</span> 没有次数的限制。</p>
+<p>于是有定理：</p>
+<div class="arithmatex">\[
 \forall f(x) \in \mathbb{SCD}(n,x)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x}f(x) \in \mathbb{SCD}(n,x)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \int f(x) \,\mathrm{d}x \in \mathbb{SCD}(n,x)
-$$</p>
-<p>示例，求 <span class="arithmatex">\(x^3\sin^2 x\cos^5 x\)</span> 的积分：
-$$
+\]</div>
+<p>示例，求 <span class="arithmatex">\(x^3\sin^2 x\cos^5 x\)</span> 的积分：</p>
+<div class="arithmatex">\[
 \begin{aligned}
-\int x^3 \sin^2 x \cos^5 x \, \mathrm{d}x = \frac{1}{64} \Bigg[ &amp; \
-&amp; 5\left( (x^3-6x)\sin x + (3x^2-6)\cos x \right) \
-&amp; - \left( (\frac{x^3}{3} - \frac{2x}{9})\sin 3x + (\frac{x^2}{3} - \frac{2}{27})\cos 3x \right) \
-&amp; - 3\left( (\frac{x^3}{5} - \frac{6x}{125})\sin 5x + (\frac{3x^2}{25} - \frac{6}{625})\cos 5x \right) \
-&amp; - \left( (\frac{x^3}{7} - \frac{6x}{343})\sin 7x + (\frac{3x^2}{49} - \frac{6}{2401})\cos 7x \right) \
+\int x^3 \sin^2 x \cos^5 x \, \mathrm{d}x = \frac{1}{64} \Bigg[ &amp; \\
+&amp; 5\left( (x^3-6x)\sin x + (3x^2-6)\cos x \right) \\
+&amp; - \left( (\frac{x^3}{3} - \frac{2x}{9})\sin 3x + (\frac{x^2}{3} - \frac{2}{27})\cos 3x \right) \\
+&amp; - 3\left( (\frac{x^3}{5} - \frac{6x}{125})\sin 5x + (\frac{3x^2}{25} - \frac{6}{625})\cos 5x \right) \\
+&amp; - \left( (\frac{x^3}{7} - \frac{6x}{343})\sin 7x + (\frac{3x^2}{49} - \frac{6}{2401})\cos 7x \right) \\
 \Bigg] + C
 \end{aligned}
-$$
-没有问题，最后的结果确实是一堆正余弦函数乘以多项式之和的形式。</p>
+\]</div>
+<p>没有问题，最后的结果确实是一堆正余弦函数乘以多项式之和的形式。</p>
 <p>此外，不难证明对于这个 <span class="arithmatex">\(\mathbb{SCD}\)</span> 集合，加法、减法、乘以一个数字这些运算也是具有封闭性的.</p>
 <h2 id="_2">一些更大胆、不切实际、莫名其妙的想法</h2>
 <p>1.在上述的讨论中，有一个前提是没有变的，那就是次数一定是正整数次，如果说把这个结论推广到正有理数、正实数、乃至实数的范围里，还会有类似的结论吗？</p>
@@ -772,33 +772,29 @@ $$
 <p>3.结合 1 与 2 ，如果可以对应非整点了，那么点集又会是什么样的？</p>
 <p>这一部分的内容已经大大超出我的能力范围了，我想我大概是在说胡话，但还是尝试算下吧。</p>
 <p>建立一个平面直角坐标系，<span class="arithmatex">\(x^a \sin^b x\cos^c x\)</span> 映射为其上的一个点 <span class="arithmatex">\((a,b,c)\)</span> ，其上任意的一点 <span class="arithmatex">\((a,b,c)\)</span> 就表示 <span class="arithmatex">\(x^a \sin^b x\cos^c x\)</span> 。</p>
-<p>首先考虑微分，计算得：
-$$
+<p>首先考虑微分，计算得：</p>
+<div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x} x^a \sin^b x\cos^c x = ax^{a-1}\sin^b x\cos^c x+bx^a\sin^{b-1}x\cos^{c+1}x-cx^a\sin^{b+1}x\cos^{c-1}x
-$$
-对应到点：
-$$
+\]</div>
+<p>对应到点：</p>
+<div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x}(a,b,c)=a(a-1,b,c)+b(a,b-1,c+1)-c(a,b+1,c-1)
-$$
-于是我们有结论:
-$$
+\]</div>
+<p>于是我们有结论:</p>
+<div class="arithmatex">\[
 微分运算使此空间上的点向\, -x \,以及\, y=z \,三个方向分裂一个单位
-$$
-考虑边界条件，即 <span class="arithmatex">\(a,b,c\geq 0\)</span>，我们可以料想到在多次微分后，点 <span class="arithmatex">\((a,b,c)\)</span> 将多次分裂，最终的点集是：
-$$
+\]</div>
+<p>考虑边界条件，即 <span class="arithmatex">\(a,b,c\geq 0\)</span>，我们可以料想到在多次微分后，点 <span class="arithmatex">\((a,b,c)\)</span> 将多次分裂，最终的点集是：</p>
+<div class="arithmatex">\[
 y+z=b+c \,\,\, (0 \leq x\leq a)\,\,\,(0 \leq y \leq b+c)\,\,\,(0 \leq z \leq b+c) \,平面上的整点
-$$
-形象描述的话就是，<span class="arithmatex">\((a,b,c)\)</span> 在分裂的过程中逐渐流向 <span class="arithmatex">\(yOz\)</span> 平面，并向 <span class="arithmatex">\(y=-z\)</span> 方向的两侧分散。</p>
+\]</div>
+<p>形象描述的话就是，<span class="arithmatex">\((a,b,c)\)</span> 在分裂的过程中逐渐流向 <span class="arithmatex">\(yOz\)</span> 平面，并向 <span class="arithmatex">\(y=-z\)</span> 方向的两侧分散。</p>
 <p>我画了几张图来具象化表示（红点是原函数，蓝点是一阶微分，绿点是二阶微分）：</p>
-<p>{% asset_img math1.png 这是一个测试图片 %}</p>
-<p><img alt="1" src="C:/Hexo-Blog/Mizore/source/images/math1.png" />
-<img alt="1" src="C:/Hexo-Blog/Mizore/source/images/math2.png" />
-<img alt="1" src="C:/Hexo-Blog/Mizore/source/images/math3.png" /></p>
-<p>接着考虑积分，因为积分十分困难，我不觉得这东西会有一个表达式，所以直接套用上述的论证（即 <span class="arithmatex">\(\mathbb{SCD}\)</span> 集合的性质），只不过在这个过程中，高次积分的结果不仅仅是平面，通过直觉我认为是：
-$$
+<p>接着考虑积分，因为积分十分困难，我不觉得这东西会有一个表达式，所以直接套用上述的论证（即 <span class="arithmatex">\(\mathbb{SCD}\)</span> 集合的性质），只不过在这个过程中，高次积分的结果不仅仅是平面，通过直觉我认为是：</p>
+<div class="arithmatex">\[
 y+z \leq b+c \,\,\, (0 \leq x\leq a)\,\,\,(0 \leq y \leq b+c)\,\,\,(0 \leq z \leq b+c) \,空间上的整点
-$$
-形象描述的话就是, <span class="arithmatex">\((a,b,c)\)</span> 在积分的过程中也在分裂，不过这次会逐渐流向原点，<span class="arithmatex">\(y+z=b+c\)</span> 与 <span class="arithmatex">\(x=a\)</span> 是两个边界。</p>
+\]</div>
+<p>形象描述的话就是, <span class="arithmatex">\((a,b,c)\)</span> 在积分的过程中也在分裂，不过这次会逐渐流向原点，<span class="arithmatex">\(y+z=b+c\)</span> 与 <span class="arithmatex">\(x=a\)</span> 是两个边界。</p>
 <p>我想对这些图形几何性质的研究或许会相当有趣，比如说一根特定直线在进行相关操作后会变成什么样的图形，但是我实在不知道怎么处理，怎么操作了，于是作罢，就写到这里。</p>
 <h2 id="_3">参考与使用的工具</h2>
 <p>1.使用 Visual Studio Code 进行 Markdown 文件的书写，使用 KaTeX 书写数学公式，之后由 VSCode 插件渲染为 pdf 文件。</p>
