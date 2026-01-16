@@ -995,11 +995,11 @@
 
 <h2 id="21">2.1一维波动方程</h2>
 <p>从最经典的角度来看，波是指具有波动性、波的结构（波峰和波谷）的粒子和其他介质。</p>
-<p>最简单的波动方程是一维正弦波（如图2.1.1），振幅 <span class="arithmatex">\(A\)</span> 可变，由如下方程得到：
-$$
+<p>最简单的波动方程是一维正弦波（如图2.1.1），振幅 <span class="arithmatex">\(A\)</span> 可变，由如下方程得到：</p>
+<div class="arithmatex">\[
 A(x,t)=A_0 \sin(kx-\omega t+\phi)
-$$
-其中：</p>
+\]</div>
+<p>其中：</p>
 <p><span class="arithmatex">\(A_0\)</span> 是指在一个波周期内，介质中扰动最高点（波峰）到平衡点的最大距离。在图2.1.1中，是基线与波之间的最大距离</p>
 <p><span class="arithmatex">\(x\)</span> 是空间坐标</p>
 <p><span class="arithmatex">\(t\)</span> 是时间坐标</p>
@@ -1011,29 +1011,29 @@ $$
 <p>行波是指像海浪或者电磁辐射那样运动的波，这意味着它们有一个可以通过时间和空间传播的频率。另一种描述这些“波的动”性质的方式是从能量传递的角度——波会沿着一段固定的距离传播或传递能量。其中最重要的就是我们日常生活中的电磁波、声波或是水波，这取决于你生活的环境。分析那些在三维空间中传播，在不同物体上反射的波是很困难的，所以我们可以先从最简单有趣的波入手——那些只能沿着一条直线传播的波。我们可以先来看看一根绳子，比如一根挂在两个钩子上的晾衣绳，用手拿起一段，用力甩一下，就能看到一个凸起沿着绳子运动：</p>
 <p>这是行波最简单的例子。你可以通过改变甩动的方式得到不同的形状。比如一上一下就是一凹一凸。不过不管怎么说，行波在运动中总是保持相同的形状。假设绳子可以被拉紧到水平放置的程度，我们可以以绳子的静止位置作为x轴，而y轴则是垂直向上，所以我们可以使用函数 <span class="arithmatex">\(y(x,t)\)</span> 来表达绳子在 <span class="arithmatex">\(x\)</span> 处 <span class="arithmatex">\(t\)</span> 时的位置</p>
 <p>于是我们就可以更精确地表达波保持相同形状这个观察结果了。方便起见，我们取 <span class="arithmatex">\(t=0\)</span> 时为波峰经过 <span class="arithmatex">\(x=0\)</span> 处的时刻并为此绘制动画（图2.1.3）记第一个函数为  <span class="arithmatex">\(y(x,0)=f(x)\)</span>，则第二个函数为 $y(x,t)=f(x-vt) $。这是同一个函数，形状相同，只是沿 <span class="arithmatex">\(vt\)</span> 方向平移了 <span class="arithmatex">\(v\)</span>，其中 <span class="arithmatex">\(v\)</span> 是波速。</p>
-<p>于是我们可以写成：
-$$
+<p>于是我们可以写成：</p>
+<div class="arithmatex">\[
 y(x,t)=f(x-vt)
-$$
-其实这忽略了摩擦的效果，在实际的绳子中，弹跳其实应该会随着波移动而越来越小。</p>
+\]</div>
+<p>其实这忽略了摩擦的效果，在实际的绳子中，弹跳其实应该会随着波移动而越来越小。</p>
 <h3 id="_2">驻波</h3>
 <p>相反与行波，驻波保持在固定的位置而波峰与波谷则在固定的时间间隔出现。一个创造驻波的方式是通过拨动吉他或小提琴的琴弦。表现此波的方式是通过让弦以一个正弦波的形式振动而两端保持不变（图2.1.4）。在两端中间的一系列点之间也会保持不动，而这些点就成为结点。最大振荡处则是反结点.</p>
 <h3 id="_3">波动方程</h3>
-<p>一维波的数学表达可以表示为：
-$$
+<p>一维波的数学表达可以表示为：</p>
+<div class="arithmatex">\[
 \frac{\partial^2u(x,t)}{\partial x^2}=\frac{1}{v^2} \frac{\partial^2u(x,t)}{\partial t^2}
-$$
-其中 <span class="arithmatex">\(u\)</span> 是波在 <span class="arithmatex">\(x\)</span> 处 <span class="arithmatex">\(t\)</span> 时的位移而 <span class="arithmatex">\(v\)</span> 是波的速度。</p>
+\]</div>
+<p>其中 <span class="arithmatex">\(u\)</span> 是波在 <span class="arithmatex">\(x\)</span> 处 <span class="arithmatex">\(t\)</span> 时的位移而 <span class="arithmatex">\(v\)</span> 是波的速度。</p>
 <p>此式被称为一维经典波动方程，是一个线性偏微分方程。它告诉了我们振幅 <span class="arithmatex">\(u\)</span> 作为一个函数如何随时间变化。此波动方程的解需要一些积分技巧。并不奇怪并非所有的波都可以满足这个方程，满足此方程的波必须同时满足初始条件和边界条件，换言之，这个波是如何产生的以及在弦的末端发生了什么。</p>
-<p>举个例子，对于一个长度为 <span class="arithmatex">\(L\)</span> 且两端绷紧的绳子上的驻波，边界条件是：
-$$
+<p>举个例子，对于一个长度为 <span class="arithmatex">\(L\)</span> 且两端绷紧的绳子上的驻波，边界条件是：</p>
+<div class="arithmatex">\[
 u(0,t)=0
-$$
-以及
-$$
+\]</div>
+<p>以及</p>
+<div class="arithmatex">\[
 u(L,t)=0
-$$
-对于所有 <span class="arithmatex">\(t\)</span> 的取值这两个式子都应成立。而不同的波有不同的边界条件，因此会有不同的解。</p>
+\]</div>
+<p>对于所有 <span class="arithmatex">\(t\)</span> 的取值这两个式子都应成立。而不同的波有不同的边界条件，因此会有不同的解。</p>
 <p>对于这两个边界条件，前六个姐如图下图，你可以注意到他们的节点数量分别是0、1、2、3……逐渐递增</p>
 <h3 id="_4">总结</h3>
 <p>波是一种能够展现运动并在时间和空间中传播的物理现象。波的两种基本类型是行波和驻波。两种都能表现波的性质的结构（波峰、波谷），可以用波函数或振动函数来数学表达。两种波都会表现运动（峰与谷的交替），但是以不同的方式：行波的波峰和波谷在传播一段距离的过程中不断地从一点移动到另一点，并且能量在这个过程中通过行波传播。相反，驻波的结点位置固定，这意味着其波峰和波谷也处在固定的间隔处。因此，驻波只会在这个固定间隔内发射振动，没有运动和能量会沿着驻波传播。</p>
@@ -1046,289 +1046,289 @@ $$
 <p>左侧拉力：向下，<span class="arithmatex">\(T \sin \theta_1\)</span></p>
 <p>右侧拉力：向上，<span class="arithmatex">\(T \sin \theta_2\)</span></p>
 <p>其中 <span class="arithmatex">\(\theta\)</span> 是对水平线偏离的角度</p>
-<p>考虑小角度近似有 <span class="arithmatex">\(\sin \theta\)</span> ~ <span class="arithmatex">\(\tan \theta\)</span> ，又因为 <span class="arithmatex">\(\tan \theta\)</span> 本质上是斜率，即一阶导数，所以有 <span class="arithmatex">\(\tan \theta = \frac{\partial u}{\partial x}\)</span> 。于是有合力：
-$$
+<p>考虑小角度近似有 <span class="arithmatex">\(\sin \theta\)</span> ~ <span class="arithmatex">\(\tan \theta\)</span> ，又因为 <span class="arithmatex">\(\tan \theta\)</span> 本质上是斜率，即一阶导数，所以有 <span class="arithmatex">\(\tan \theta = \frac{\partial u}{\partial x}\)</span> 。于是有合力：</p>
+<div class="arithmatex">\[
  F_{\rm{net}} \approx T \left( \frac{\partial u}{\partial x} \bigg\vert_{x+\Delta x} - \frac{\partial u}{\partial x} \bigg\vert_{x} \right)
-$$</p>
-<p>我们定义线密度 <span class="arithmatex">\(\mu= \frac{m}{\Delta x}\)</span> ；结合加速度 <span class="arithmatex">\(a=\frac{\partial^2u }{\partial t^2}\)</span>，再由牛顿第二定律 <span class="arithmatex">\(F=ma\)</span> 可以讲上式写成：
-$$
+\]</div>
+<p>我们定义线密度 <span class="arithmatex">\(\mu= \frac{m}{\Delta x}\)</span> ；结合加速度 <span class="arithmatex">\(a=\frac{\partial^2u }{\partial t^2}\)</span>，再由牛顿第二定律 <span class="arithmatex">\(F=ma\)</span> 可以讲上式写成：</p>
+<div class="arithmatex">\[
 T \left( \frac{\partial u}{\partial x} \bigg\vert_{x+\Delta x} - \frac{\partial u}{\partial x} \bigg\vert_{x} \right)=\mu \Delta x \cdot \frac{\partial^2u }{\partial t^2}
-$$
-把 <span class="arithmatex">\(\Delta x\)</span> 与 <span class="arithmatex">\(T\)</span> 移项：
-$$
+\]</div>
+<p>把 <span class="arithmatex">\(\Delta x\)</span> 与 <span class="arithmatex">\(T\)</span> 移项：</p>
+<div class="arithmatex">\[
 \frac{\frac{\partial u}{\partial x} \bigg\vert_{x+\Delta x} - \frac{\partial u}{\partial x} \bigg\vert_{x}}{\Delta x} = \frac{\mu}{T} \cdot \frac{\partial^2u }{\partial t^2}
-$$
-由导数的定义，左式便是 <span class="arithmatex">\(\mu\)</span> 对 <span class="arithmatex">\(x\)</span> 的二阶导，于是改写为：</p>
+\]</div>
+<p>由导数的定义，左式便是 <span class="arithmatex">\(\mu\)</span> 对 <span class="arithmatex">\(x\)</span> 的二阶导，于是改写为：</p>
 <div class="arithmatex">\[
 \frac{\partial^2u }{\partial x^2} = \frac{\mu}{T} \cdot \frac{\partial^2u }{\partial t^2}
 \]</div>
 <p>接下来处理 <span class="arithmatex">\(\frac{\mu}{T}\)</span>。</p>
-<p>我们考虑以波为参考系，此时绳子在运动，就像是一段水流穿过一根水管一样。考虑到任何一个曲线在极小距离内都可以看作一段圆弧（这里可以去学习曲率），于是我们不妨取波峰上的一小段绳子 <span class="arithmatex">\(\Delta l\)</span> 来受力分析，其曲率半径为 <span class="arithmatex">\(R\)</span> ，那么对于一个做圆周运动的物体，其必然要受到张力，这个张力由绳中左右张力提供，由对称性它们的合力应该刚好垂直向下，于是：
-$$
+<p>我们考虑以波为参考系，此时绳子在运动，就像是一段水流穿过一根水管一样。考虑到任何一个曲线在极小距离内都可以看作一段圆弧（这里可以去学习曲率），于是我们不妨取波峰上的一小段绳子 <span class="arithmatex">\(\Delta l\)</span> 来受力分析，其曲率半径为 <span class="arithmatex">\(R\)</span> ，那么对于一个做圆周运动的物体，其必然要受到张力，这个张力由绳中左右张力提供，由对称性它们的合力应该刚好垂直向下，于是：</p>
+<div class="arithmatex">\[
  F \approx 2T \sin \theta \approx T \cdot 2 \theta \approx T \cdot \frac{\Delta l}{R}
-$$
-结合：
-$$
+\]</div>
+<p>结合：</p>
+<div class="arithmatex">\[
  m=\mu \Delta l
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 a=\frac{v^2}{R}
-$$
-使用牛顿第二定律：
-$$
+\]</div>
+<p>使用牛顿第二定律：</p>
+<div class="arithmatex">\[
  T \cdot \frac{\Delta l}{R} = \mu \Delta l \cdot \frac{v^2}{R}
-$$
-得到：
-$$
+\]</div>
+<p>得到：</p>
+<div class="arithmatex">\[
  \frac{\mu}{T} = \frac{1}{v^2}
-$$
-再代回我们之间推导出来的波动方程，就有了：
-$$
+\]</div>
+<p>再代回我们之间推导出来的波动方程，就有了：</p>
+<div class="arithmatex">\[
  \frac{\partial^2u }{\partial x^2} = \frac{1}{v^2} \cdot \frac{\partial^2u }{\partial t^2}
-$$</p>
+\]</div>
 <h2 id="22">2.2分离变量法</h2>
-<p>求解这个波动方程，我们就需要找到能满足条件的函数 <span class="arithmatex">\(u(x,t)\)</span>。
-$$
+<p>求解这个波动方程，我们就需要找到能满足条件的函数 <span class="arithmatex">\(u(x,t)\)</span>。</p>
+<div class="arithmatex">\[
 \dfrac{\partial^2 u(x,t)}{\partial x^2} = \dfrac{1}{v^2} \dfrac{\partial^2 u(x,t)}{\partial t^2}
-$$
-这个波动方程是一种二阶偏微分方程（PDE），其包含 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(t\)</span> 两个变量。相较于只含有一个变量的常微分方程（ODE），偏微分方程更见难以解决了。事实上，绝大多数偏微分方程无法求解析解，而那些可以求出解析解的偏微分方程也总是需要将其分解转化为一个或多个常微分方程再独立求解。其中一个方法便是分离变量法。</p>
+\]</div>
+<p>这个波动方程是一种二阶偏微分方程（PDE），其包含 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(t\)</span> 两个变量。相较于只含有一个变量的常微分方程（ODE），偏微分方程更见难以解决了。事实上，绝大多数偏微分方程无法求解析解，而那些可以求出解析解的偏微分方程也总是需要将其分解转化为一个或多个常微分方程再独立求解。其中一个方法便是分离变量法。</p>
 <p>分离变量法是最常用的解决偏微分方程的方法之一，其基于一个假设：方程的解是可以拆分的，即最终的解可以表现为一系列方程的积，每一个都可以表示为一个单变量函数。如果这个假设是错误的，那么在分析中就可以看到明显的数学错误。</p>
 <h3 id="_6">固定在两点间的振动弹簧</h3>
-<p>我们于是可以使用分离变量法，使：
-$$
+<p>我们于是可以使用分离变量法，使：</p>
+<div class="arithmatex">\[
 u(x,t)=X(x)T(t)
-$$
-（严格来说会是下面这种情况，但这个例子比较简单，就不用搞得那么麻烦）
-$$
+\]</div>
+<p>（严格来说会是下面这种情况，但这个例子比较简单，就不用搞得那么麻烦）</p>
+<div class="arithmatex">\[
 u(x,t)=\sum_i c_ iX_i(x)T_i(t)
-$$
-将其代入波动方程：
-$$
+\]</div>
+<p>将其代入波动方程：</p>
+<div class="arithmatex">\[
 \dfrac{\partial^2 X(x)T(t)}{\partial x^2} = \dfrac{1}{v^2} \dfrac{\partial^2 X(x)T(t)}{\partial t^2}
-$$
-分离变量：
-$$
+\]</div>
+<p>分离变量：</p>
+<div class="arithmatex">\[
 \dfrac{1}{X(x)} \dfrac{\partial^2 X(x)}{\partial x^2} = \dfrac{1}{v^2} \dfrac{1}{T(t)} \dfrac{\partial^2T(t)}{\partial t^2}
-$$
-令其等于一个系数 <span class="arithmatex">\(K\)</span> ，就可以得到将其拆解为两个常微分方程：
-$$
+\]</div>
+<p>令其等于一个系数 <span class="arithmatex">\(K\)</span> ，就可以得到将其拆解为两个常微分方程：</p>
+<div class="arithmatex">\[
 \dfrac{1}{X(x)} \dfrac{\partial^2 X(x)}{\partial x^2} = \dfrac{1}{v^2} \dfrac{1}{T(t)} \dfrac{\partial^2T(t)}{\partial t^2}=K
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \dfrac{d^2T(t)}{dt^2} - Kv^2 T(t) = 0
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \dfrac{d^2X(x)}{dx^2} - K X(x) = 0
-$$
-如果 <span class="arithmatex">\(K=0\)</span> 那我们就可以得到一个平凡解 <span class="arithmatex">\(u(x,y)=0\)</span> ，即波不存在。
+\]</div>
+<p>如果 <span class="arithmatex">\(K=0\)</span> 那我们就可以得到一个平凡解 <span class="arithmatex">\(u(x,y)=0\)</span> ，即波不存在。
 如果 <span class="arithmatex">\(K＞0\)</span>，这是一个线性微分方程，历史上欧拉发现我们只需要这样做就可以解决它：
-对于:
-$$
+对于:</p>
+<div class="arithmatex">\[
 \dfrac{d^2y(x)}{dx^2} - k^2 y(x) = 0
-$$
-设：
-$$
+\]</div>
+<p>设：</p>
+<div class="arithmatex">\[
 y(x) = e^{\alpha x}
-$$
-得到：
-$$
+\]</div>
+<p>得到：</p>
+<div class="arithmatex">\[
 \left( \alpha^2 - k^2 \right)y(x)=0
-$$
-我们不要那个 <span class="arithmatex">\(y(x)=0\)</span> 的平凡解，就会是：
-$$
+\]</div>
+<p>我们不要那个 <span class="arithmatex">\(y(x)=0\)</span> 的平凡解，就会是：</p>
+<div class="arithmatex">\[
 \alpha = \pm k
-$$
-于是得到 <span class="arithmatex">\(a\)</span> 的两个取值，再把他们进行线性组合：
-$$
+\]</div>
+<p>于是得到 <span class="arithmatex">\(a\)</span> 的两个取值，再把他们进行线性组合：</p>
+<div class="arithmatex">\[
 y(x) = e^{k\, x} \nonumber
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 y(x) = e^{-k\, x} \nonumber
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 y(x) = c_1 e^{k\, x} + c_2 e^{-k\, x}
-$$
-就是方程的解了。</p>
+\]</div>
+<p>就是方程的解了。</p>
 <p>你可以做几道题练练手，比如 <span class="arithmatex">\(y'' + 3y' - 4y = 0 \nonumber\)</span> ，很快就能掌握。</p>
-<p>于是那个关于 <span class="arithmatex">\(x\)</span> 的方程解就是：
-$$
+<p>于是那个关于 <span class="arithmatex">\(x\)</span> 的方程解就是：</p>
+<div class="arithmatex">\[
 X(x) = A e^{\sqrt{K}x} + B e^{-\sqrt{K}x}
-$$
-如果加入一些边界条件，比如：
-$$
+\]</div>
+<p>如果加入一些边界条件，比如：</p>
+<div class="arithmatex">\[
 u(0,t) = X(x)T(t) = 0
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 u(L,t) = X(x)T(t) = 0
-$$
-就可以得到：
-$$
+\]</div>
+<p>就可以得到：</p>
+<div class="arithmatex">\[
 X(x=0)= A + B = 0
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 X(x=L)= A e^{\sqrt{K}L} + B e^{-\sqrt{K}L} = 0
-$$</p>
+\]</div>
 <p>然而当 <span class="arithmatex">\(K&gt;0\)</span> 时，你会发现除了 <span class="arithmatex">\(X(x=0)\)</span> 这个平凡解，我们找不到其他的解来满足条件，这时候就请看下一节，当 <span class="arithmatex">\(K&lt;0\)</span> 时我们可以得到什么。</p>
 <div class="arithmatex">\[
 (A_2x^2+A_1x+A_0)(B_2\sin^2x+B_1\sin x \cos x+B_0 \cos^2x)
 \]</div>
 <h2 id="23">2.3微分方程的振荡解</h2>
 <p>对于一根两端绷紧的弦，其边界条件为 <span class="arithmatex">\(u(x,t)=0\)</span> ，下图是其前几个解：</p>
-<p>$$
+<div class="arithmatex">\[
 \dfrac{d^2X(x)}{dx^2} -K X(x) = 0
-$$
-不过不幸的是，当 <span class="arithmatex">\(K&gt;0\)</span> 时，此方程的通解会导致指数衰减/增长以至于无法满足边界条件，因此 <span class="arithmatex">\(K&lt;0\)</span> 。这意味着我们必须引入虚数来解决 <span class="arithmatex">\(\sqrt{K}\)</span>的存在，因此我们可以将 <span class="arithmatex">\(K\)</span> 写成：
-$$
+\]</div>
+<p>不过不幸的是，当 <span class="arithmatex">\(K&gt;0\)</span> 时，此方程的通解会导致指数衰减/增长以至于无法满足边界条件，因此 <span class="arithmatex">\(K&lt;0\)</span> 。这意味着我们必须引入虚数来解决 <span class="arithmatex">\(\sqrt{K}\)</span>的存在，因此我们可以将 <span class="arithmatex">\(K\)</span> 写成：</p>
+<div class="arithmatex">\[
 K=-p^2
-$$
-于是上式就变成了：
-$$
+\]</div>
+<p>于是上式就变成了：</p>
+<div class="arithmatex">\[
 \dfrac{d^2X(x)}{dx^2} +p^2 X(x) = 0
-$$
-我们一步步来找到这个方程的通解。</p>
-<p>首先我们可以通过欧拉方程 <span class="arithmatex">\(e^{i \theta} = \cos \theta + i\sin \theta\)</span> 来将虚数引入：
-$$
+\]</div>
+<p>我们一步步来找到这个方程的通解。</p>
+<p>首先我们可以通过欧拉方程 <span class="arithmatex">\(e^{i \theta} = \cos \theta + i\sin \theta\)</span> 来将虚数引入：</p>
+<div class="arithmatex">\[
 X(x) = A \left[\cos (px) + i \sin (px) \right] + B \left[ \cos (px) - i \sin (px) \right]
-$$
-整理为这样的形式：
-$$
+\]</div>
+<p>整理为这样的形式：</p>
+<div class="arithmatex">\[
 X(x) = (A + B ) \cos (px) + i (A - B) \sin (px)
-$$
-令 <span class="arithmatex">\(c_1=A+B\)</span>，<span class="arithmatex">\(c_2=A-B\)</span>：
-$$
+\]</div>
+<p>令 <span class="arithmatex">\(c_1=A+B\)</span>，<span class="arithmatex">\(c_2=A-B\)</span>：</p>
+<div class="arithmatex">\[
 X(x) = c_1 \cos (px) + c_2 \sin (px)
-$$
-现在我们把边界条件代入进式子，首先是 <span class="arithmatex">\(X(x=0)=0\)</span>：
-$$
+\]</div>
+<p>现在我们把边界条件代入进式子，首先是 <span class="arithmatex">\(X(x=0)=0\)</span>：</p>
+<div class="arithmatex">\[
 X(x=0) = c_1 \cos (0) + c_2 \sin (0)=0
-$$
-得到 <span class="arithmatex">\(c_1=0\)</span> ，再把 <span class="arithmatex">\(X(x=L)=0\)</span> 代入得到：
-$$
+\]</div>
+<p>得到 <span class="arithmatex">\(c_1=0\)</span> ，再把 <span class="arithmatex">\(X(x=L)=0\)</span> 代入得到：</p>
+<div class="arithmatex">\[
 X(x=L) = c_1 \cos (pL) + c_2 \sin (pL) = 0
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 c_2 \sin (pL) = 0
-$$
-考虑正弦函数的性质，有：
-$$
+\]</div>
+<p>考虑正弦函数的性质，有：</p>
+<div class="arithmatex">\[
 pL= n\pi
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 p = \dfrac{n\pi}{L}
-$$
-于是此方程的解就是：
-$$
+\]</div>
+<p>于是此方程的解就是：</p>
+<div class="arithmatex">\[
 X(x) = c_2 \sin \left(\dfrac{n\pi x}{L} \right)
-$$
-我们可以将其规定为：
-$$
+\]</div>
+<p>我们可以将其规定为：</p>
+<div class="arithmatex">\[
 X(x) = c_2 \sin \left( \omega x \right)
-$$
-于是根据欧拉公式
-$$
+\]</div>
+<p>于是根据欧拉公式</p>
+<div class="arithmatex">\[
 X(x) = A e^{ipx} + B e^{-ipx}
-$$</p>
+\]</div>
 <h2 id="24">2.4通解是简正模的叠加</h2>
-<p>就像之前讨论的那样，弦模型 <span class="arithmatex">\(u(x,t)\)</span> 的解可以被理解为两个函数 <span class="arithmatex">\(X(x)\)</span> 与 <span class="arithmatex">\(T(t)\)</span> 的乘积：
-$$
+<p>就像之前讨论的那样，弦模型 <span class="arithmatex">\(u(x,t)\)</span> 的解可以被理解为两个函数 <span class="arithmatex">\(X(x)\)</span> 与 <span class="arithmatex">\(T(t)\)</span> 的乘积：</p>
+<div class="arithmatex">\[
 u(x,t)=X(x)T(t)
-$$</p>
+\]</div>
 <p>通过分离变量法，可以得到两个常微分方程，每个微分方程只涉及一个变量。</p>
 <h3 id="xx">解的空间相关：<span class="arithmatex">\(X(x)\)</span></h3>
-<p>弦的边界条件使得方程 <span class="arithmatex">\(u(x,t)\)</span> 在弦的两端降至 <span class="arithmatex">\(0\)</span> 。参照2.3的内容，解出来是：
-$$
+<p>弦的边界条件使得方程 <span class="arithmatex">\(u(x,t)\)</span> 在弦的两端降至 <span class="arithmatex">\(0\)</span> 。参照2.3的内容，解出来是：</p>
+<div class="arithmatex">\[
 X(x) =C \cos (px) + D \sin (px)
-$$</p>
+\]</div>
 <h3 id="tt">解的时间相关：<span class="arithmatex">\(T(t)\)</span></h3>
-<p>与上面类似，此方程：
-$$
+<p>与上面类似，此方程：</p>
+<div class="arithmatex">\[
 \dfrac{d^2T(t)}{dt^2} - Kv^2 T(t) = 0
-$$
-也受边界条件约束。我们可以用类似的方式，首先进行简化：
-$$
+\]</div>
+<p>也受边界条件约束。我们可以用类似的方式，首先进行简化：</p>
+<div class="arithmatex">\[
 \dfrac{d^2T(t)}{dt^2} + p^2v^2 T(t) = \dfrac{d^2T(t)}{dt^2} + \left(\dfrac{n v \pi}{L}\right)^2 T(t) = 0
-$$
-规定 <span class="arithmatex">\(\omega_n\)</span> ：
-$$
+\]</div>
+<p>规定 <span class="arithmatex">\(\omega_n\)</span> ：</p>
+<div class="arithmatex">\[
 \omega_n= \left(\dfrac{n v \pi}{L}\right)
-$$
-代回并解得：
-$$
+\]</div>
+<p>代回并解得：</p>
+<div class="arithmatex">\[
 \dfrac{d^2T(t)}{dt^2} + \omega_n^2 T(t) = 0
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 T(t) = E \cos (\omega_n t) + F \sin (\omega_n t)
-$$</p>
+\]</div>
 <h3 id="_7">叠加态原理</h3>
-<p>现在我们来回顾一下最经典波动方程原始的 拟设(ansatz) 解：
-$$
+<p>现在我们来回顾一下最经典波动方程原始的 拟设(ansatz) 解：</p>
+<div class="arithmatex">\[
 u(x,t) = X(x)T(t)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \left[D \sin \left(\dfrac{n\pi x}{L} \right) \right] \left( E \cos (\omega_n t) + F \sin (\omega_n t) \right)
-$$
-我们可以令常数 <span class="arithmatex">\(G=DE\)</span> ， <span class="arithmatex">\(H=DF\)</span> 来简化此解：
-$$
-u_n(x,t) = \underbrace{\left[ G_n \cos (\omega_n t) + H_n \sin (\omega_n t) \right]}<em>{\text{时间解}} \underbrace{\sin \left(\dfrac{n\pi x}{L} \right)}</em>{\text{位移解}}
-$$
-此方程表示了两端绷紧的弦的一系列含时含位的解。</p>
+\]</div>
+<p>我们可以令常数 <span class="arithmatex">\(G=DE\)</span> ， <span class="arithmatex">\(H=DF\)</span> 来简化此解：</p>
+<div class="arithmatex">\[
+u_n(x,t) = \underbrace{\left[ G_n \cos (\omega_n t) + H_n \sin (\omega_n t) \right]}_{\text{时间解}} \underbrace{\sin \left(\dfrac{n\pi x}{L} \right)}_{\text{位移解}}
+\]</div>
+<p>此方程表示了两端绷紧的弦的一系列含时含位的解。</p>
 <h3 id="_8">波动方程的线性性</h3>
-<p>波动方程有一个重要的性质：如果我们将两个波动方程相加，那么两个解的相加也将仍然是新的波动方程的解，因为很容易检验得到：
-$$
+<p>波动方程有一个重要的性质：如果我们将两个波动方程相加，那么两个解的相加也将仍然是新的波动方程的解，因为很容易检验得到：</p>
+<div class="arithmatex">\[
 \dfrac{\partial^2 (f+g)}{\partial x^2} = \dfrac{\partial^2 f}{\partial x^2} + \dfrac{\partial^2 g}{\partial x^2} = \dfrac{1}{v^2} \dfrac{\partial^2f}{\partial t^2} +\dfrac{1}{v^2} \dfrac{\partial^2g}{\partial t^2} = \dfrac{1}{v^2} \dfrac{\partial^2(f+g)}{\partial t^2}
-$$
-任何具有此性质的微分方程都被称作线性微分方程。留心 <span class="arithmatex">\(af(x,t)+bg(x,t)\)</span> 也是这个方程的解如果 <span class="arithmatex">\(a,b\)</span> 是常数。因此你可以把它们加在一起——叠加——对波动方程任意两个解进行线性加和的来找到满足该方程的新函数。</p>
+\]</div>
+<p>任何具有此性质的微分方程都被称作线性微分方程。留心 <span class="arithmatex">\(af(x,t)+bg(x,t)\)</span> 也是这个方程的解如果 <span class="arithmatex">\(a,b\)</span> 是常数。因此你可以把它们加在一起——叠加——对波动方程任意两个解进行线性加和的来找到满足该方程的新函数。</p>
 <p>波动方程可以很容易被可视化呈现：如果你把两个波画下来，那么每个点的位移都将是两个原来的点的位移之和，于是两个波的加和就是解了。当两个行波在弦上碰撞时，弦上任何一点在任何时刻的位移就是两束波单独传播时弦上位移的总和。</p>
 <p>这种简单的位移叠加就是干涉。我们又称此位叠加态原理（principal of superposition）。</p>
-<p>由于波动方程是线性齐次微分方程，总解就可以这样表示：
-$$
+<p>由于波动方程是线性齐次微分方程，总解就可以这样表示：</p>
+<div class="arithmatex">\[
 u(x,t) = \sum_{n=1}^{\infty} u_n(x,t)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 = \sum_{n=1}^{\infty} \left( G_n \cos (\omega_n t) + H_n \sin (\omega_n t) \right) \sin \left(\dfrac{n\pi x}{L}\right)
-$$
-每一个解 <span class="arithmatex">\(u_n(x,t)\)</span> 都被称作系统的一个简正模并且可以通过相关频率 <span class="arithmatex">\((\frac{n\pi}{L}),\,\,n=1,2,3…\)</span> 来被特征化。最前面的七个位置相关简正模呈现在下图，是驻波。第一个， <span class="arithmatex">\(n=1\)</span> 的哪一个一般被叫做基频并且后续的每个简正模都被称作泛音或者谐波。而时间相关的简正模是有着角频率 <span class="arithmatex">\(\omega_n\)</span> 的正弦波，可以被拓展为自然频率 <span class="arithmatex">\(\nu_n\)</span> 通过：
-$$
+\]</div>
+<p>每一个解 <span class="arithmatex">\(u_n(x,t)\)</span> 都被称作系统的一个简正模并且可以通过相关频率 <span class="arithmatex">\((\frac{n\pi}{L}),\,\,n=1,2,3…\)</span> 来被特征化。最前面的七个位置相关简正模呈现在下图，是驻波。第一个， <span class="arithmatex">\(n=1\)</span> 的哪一个一般被叫做基频并且后续的每个简正模都被称作泛音或者谐波。而时间相关的简正模是有着角频率 <span class="arithmatex">\(\omega_n\)</span> 的正弦波，可以被拓展为自然频率 <span class="arithmatex">\(\nu_n\)</span> 通过：</p>
+<div class="arithmatex">\[
 \nu_n = \dfrac{\omega_n}{2 \pi} = \dfrac{nv}{2L}
-$$
-因此，随着简正模的空间曲率增加，单位时间的振动也会增加。这是量子力学的一般特征并且是波动方程的一个直接结果。</p>
+\]</div>
+<p>因此，随着简正模的空间曲率增加，单位时间的振动也会增加。这是量子力学的一般特征并且是波动方程的一个直接结果。</p>
 <h2 id="25">2.5振动膜</h2>
 <p>目前，通过弦模型的探索，我们已经完成了对一维波的了解。然而，高维的波在生活中更为常见——表面的水波、三维空间中的声波等等。让人满意的是，这些高维波也满足一维波动方程的形式，只是要加以一些拓展，并且重要的是，它们也都满足叠加态原理。换句话说，如果多个波相遇了，你只需要加起来就好，在接下来的两节，我们将演示更多信息，不过叠加态原理仍然是重要的一课。</p>
 <h3 id="_9">高维的波动方程与叠加态原理</h3>
 <p>在更高的维度里会发生什么呢？我们首先来看下二维的情况，比如说一个像鼓面那样的弹性面。如果用 <span class="arithmatex">\((x,y)\)</span> 表示面上的坐标，那么它就会在 <span class="arithmatex">\(z\)</span> 轴上振动，并且这个方程将会是含时的，我们记成 <span class="arithmatex">\(u(x,y,t)\)</span></p>
-<p>实际上，我们可以做和弦模型一样的推导，在一个小点上受力分析并使用牛顿第二定律：取一小块鼓皮（弹性薄片），使其边缘绷紧。弦模型中，弦上的合力是由于其弯曲带来的，因此弦两端的张力方向略有不同，因此不会抵消。二阶偏导 <span class="arithmatex">\(\frac{\partial^2}{\partial x^2}\)</span> 表示了曲率，即斜率的变化率。在二维的情形中，构想一个小方形，它会向两个方向弯曲，并且边缘周围一定会有拉力。小方形上的合力也同一维那样并不等于零，因为此时曲面两侧的张力大小也不一致。按照一维弦模型的方式，我们有理由得到这样的一个数学方程：
-$$
+<p>实际上，我们可以做和弦模型一样的推导，在一个小点上受力分析并使用牛顿第二定律：取一小块鼓皮（弹性薄片），使其边缘绷紧。弦模型中，弦上的合力是由于其弯曲带来的，因此弦两端的张力方向略有不同，因此不会抵消。二阶偏导 <span class="arithmatex">\(\frac{\partial^2}{\partial x^2}\)</span> 表示了曲率，即斜率的变化率。在二维的情形中，构想一个小方形，它会向两个方向弯曲，并且边缘周围一定会有拉力。小方形上的合力也同一维那样并不等于零，因为此时曲面两侧的张力大小也不一致。按照一维弦模型的方式，我们有理由得到这样的一个数学方程：</p>
+<div class="arithmatex">\[
 \frac{ \partial^2 u(x,y,t)}{\partial x^2} + \frac{ \partial^2 u(x,y,t)}{\partial y^2} = \frac{1}{v^2} \frac{ \partial^2 u(x,y,t)}{\partial t^2}
-$$
-你可以把它理解为 <span class="arithmatex">\(x\)</span> 轴与 <span class="arithmatex">\(y\)</span> 轴上合力产生的加速度叠加了，共同导致了右侧的位移变化速率，即波动方程对时间的二阶导。</p>
-<p>于是，我们也可以将此推广到三维：
-$$
+\]</div>
+<p>你可以把它理解为 <span class="arithmatex">\(x\)</span> 轴与 <span class="arithmatex">\(y\)</span> 轴上合力产生的加速度叠加了，共同导致了右侧的位移变化速率，即波动方程对时间的二阶导。</p>
+<p>于是，我们也可以将此推广到三维：</p>
+<div class="arithmatex">\[
 \frac{ \partial^2 u(x,y,z,t)}{\partial x^2} + \frac{ \partial^2 u(x,y,z,t)}{\partial y^2} + \frac{ \partial^2 u(x,y,z,t)}{\partial z^2} = \frac{1}{v^2} \frac{\partial^2 u(x,y,z,t)}{\partial t^2}
-$$
-左边的式子无疑很长，我们一般会用nabla算子来简化表达：
-$$
+\]</div>
+<p>左边的式子无疑很长，我们一般会用nabla算子来简化表达：</p>
+<div class="arithmatex">\[
 \nabla^2 = \left( \dfrac{ \partial^2}{\partial x^2}, \dfrac{ \partial^2}{\partial y^2}, \dfrac{ \partial^2}{\partial z^2} \right)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \nabla^2 u(x,y,z,t) = \dfrac{1}{v^2} \dfrac{\partial^2 u(x,y,z,t)}{\partial t^2}
-$$
-就像是我们在一维形式中得到的那样，一个行波的谐波（无边界条件）是：
-$$
+\]</div>
+<p>就像是我们在一维形式中得到的那样，一个行波的谐波（无边界条件）是：</p>
+<div class="arithmatex">\[
 u(x,t)=A\sin(kx-\omega t)
-$$
-那么三维就是：
-$$
+\]</div>
+<p>那么三维就是：</p>
+<div class="arithmatex">\[
 u(x,y,z,t) = A\sin(k_x x+k_y y+k_z z-\omega t)
-$$
-其中 <span class="arithmatex">\(\omega=v|\vec{k}|\)</span> ，<span class="arithmatex">\(|k|=\sqrt{k_x^2+k_y^2+k_z^2}\)</span></p>
+\]</div>
+<p>其中 <span class="arithmatex">\(\omega=v|\vec{k}|\)</span> ，<span class="arithmatex">\(|k|=\sqrt{k_x^2+k_y^2+k_z^2}\)</span></p>
 <p><span class="arithmatex">\(\vec{k}\)</span> 是一个沿波传播方向的矢量。无线电波或光波中的电场与磁场就有这种形式。</p>
 <h3 id="_10">矩形膜的振动模式</h3>
 <p>一维波的传播方式没有选择余地：它只能沿着直线传播（当然，它可能会因为直线上的某些变化而被部分反射，一部分会反向传播）。然而，当我们进入更高维度时，从局部区域开始的波扰动如何扩散就远非显而易见了。但我们可以先回顾一些简单的例子：向平静的水面投入一颗鹅卵石会引起向外扩散的涟漪。如果我们假设光是一种波，我们会注意到光束从空气进入玻璃时会改变方向。当然，光是一种波这一点并非显而易见：我们稍后会详细讨论。下面列出了一些解（包括时间和空间上的解）及其量子数 <span class="arithmatex">\((n_x 与 n_y)\)</span></p>
-<p>求解一个二维波动方程也和一维的比较类似，可以用分离变量法得到：
-$$
+<p>求解一个二维波动方程也和一维的比较类似，可以用分离变量法得到：</p>
+<div class="arithmatex">\[
 u(x,y,t) = A_{nm} \cos(\omega_{nm} t + \phi_{nm}) \sin \left(\dfrac {n_x \pi x}{a}\right) \sin\left(\dfrac {n_y\pi y}{b}\right)
-$$
-其中：</p>
+\]</div>
+<p>其中：</p>
 <ul>
 <li>
 <p><span class="arithmatex">\(a\)</span> 是矩形膜的长度而 <span class="arithmatex">\(b\)</span> 是矩形膜的宽度</p>
@@ -1339,11 +1339,11 @@ $$
 </ul>
 <p>和一维波动方程一样，节点是指不会移动的线或点。</p>
 <h3 id="_11">圆形膜的振动模式</h3>
-<p>圆形膜和矩形膜同为二维图形，在振动模式上遵循同样的法则，但是它的数学解会显得有一些复杂，一般来说会按照极坐标的方式呈现：
-$$
+<p>圆形膜和矩形膜同为二维图形，在振动模式上遵循同样的法则，但是它的数学解会显得有一些复杂，一般来说会按照极坐标的方式呈现：</p>
+<div class="arithmatex">\[
 u(r,\theta,t)=J_m(\lambda_{mn}r)\cos m\theta \cos c\lambda_{mn}t
-$$
-其中 <span class="arithmatex">\(J\)</span> 是Bessel函数而 <span class="arithmatex">\(\lambda\)</span> 是一个常量。此系统也有两个量子数<span class="arithmatex">\((m,n)\)</span> 并且和矩形膜中的量子数发挥同样的作用，在下面的演示中，节点直径和圆显示为不振荡的白色区域，而红色和蓝色区域分别表示正位移和负位移。</p>
+\]</div>
+<p>其中 <span class="arithmatex">\(J\)</span> 是Bessel函数而 <span class="arithmatex">\(\lambda\)</span> 是一个常量。此系统也有两个量子数<span class="arithmatex">\((m,n)\)</span> 并且和矩形膜中的量子数发挥同样的作用，在下面的演示中，节点直径和圆显示为不振荡的白色区域，而红色和蓝色区域分别表示正位移和负位移。</p>
 <h2 id="_12">复习</h2>
 <ul>
 <li>了解包含时间和位置的波动方程，至少会背并描述含义</li>
